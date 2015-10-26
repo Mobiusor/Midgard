@@ -1,0 +1,36 @@
+{
+  "name": "midgard",
+  "version": "0.0.0",
+  "description": "A web game platform for snippet games.",
+  "main": "server.js",
+  "repository": "",
+  "author": "Mobiusor <mobiusor@gmail.com>",
+  "dependencies": {
+    "async": "~0.2.8",
+    "express": "~3.2.4",
+    "socket.io": "~0.9.14",
+    "bootstrap": "^3.3.5",
+    "jquery": "^2.1.4",
+    "react": "^0.13.3"
+  },
+  "devDependencies": {
+    "browserify": "^11.0.0",
+    "envify": "^3.4.0",
+    "jest-cli": "^0.4.17",
+    "uglify-js": "^2.4.24",
+    "watchify": "^3.3.0"
+  },
+  "scripts": {
+    "start": "watchify -o js/bundle.js -v -d js/app.js",
+    "build": "browserify . -t [envify --NODE_ENV production] | uglifyjs -cm > js/bundle.min.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "browserify": {
+    "transform": [
+      "envify"
+    ]
+  },
+  "jest": {
+    "rootDir": "./js"
+  }
+}

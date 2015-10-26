@@ -1,0 +1,11 @@
+bundle.*
+node_modules/
+*.log
+*.min.js
+refrences
+*.tmp
+*.dat
+.vs/
+.settings/
+data/
+tmp/
